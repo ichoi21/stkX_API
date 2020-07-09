@@ -1,0 +1,7 @@
+node_modules
+.env
+nate-stockx-api
+.git
+package-lock.json
+server.js
+package.json
