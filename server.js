@@ -1,5 +1,9 @@
 $(document).ready(function () {
   init();
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 
   function init() {
     stockx();
@@ -43,13 +47,13 @@ $(document).ready(function () {
             <div class="col-sm-8 text-center">
               <div class="card shadow">
                 <h2>
-                   ${year} ${brand} ${name} ${msrp}
+                ${year} ${gender} ${brand}: ${name}
                 </h2>
                 <h4>
-                  ${PID} - ${gender}
+                  ${PID} - ${formatter.format(msrp)}
                 </h4>
                 <h3> ${colorway}</h3>
-                <h3> Current Value ${mV}</h3>
+                <h3> Current Value: ${formatter.format(mV)}</h3>
                 <img src="${img}" alt="" />
               </div>
             </div>
